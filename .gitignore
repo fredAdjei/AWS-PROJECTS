@@ -1,0 +1,41 @@
+# === Python ===
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+venv/
+pip-log.txt
+ 
+# === Lambda Deployment ZIP ===
+lambda/function.zip
+ 
+# === Terraform ===
+*.tfstate
+*.tfstate.*
+.terraform/
+.terraform.lock.hcl
+terraform.tfvars
+ 
+# Optional: ignore sensitive backups or overrides
+*.backup
+*.override.tf
+ 
+# === AWS CLI credentials (optional if used) ===
+.aws/
+ 
+# === VS Code / IDE files ===
+.vscode/
+.idea/
+*.swp
+*.bak
+*~
+ 
+# === Mac & Linux cruft ===
+.DS_Store
+Thumbs.db
+ 
