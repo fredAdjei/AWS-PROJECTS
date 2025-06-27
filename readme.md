@@ -16,6 +16,7 @@ This solution implements a fully serverless translation pipeline that:
 │    (Input JSON) │    │ (Translation API)│    │ (Translated JSON)│
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
+![infrustructure diagram ](image.png)
 
 
 ## 📋 Table of Contents
@@ -72,20 +73,14 @@ aws-translation-infrastructure/
 │   ├── s3.tf                   # S3 bucket configurations
 │   ├── lambda.tf               # Lambda function setup
 │   └── terraform.tfvars        # Variable values
-├── src/
-│   ├── lambda_function.py      # Main Lambda translation logic
-│   ├── translation_handler.py  # Translation processing module
-│   └── requirements.txt        # Python dependencies
-├── sample-data/
-│   ├── sample-input.json       # Example input file
-│   └── expected-output.json    # Example expected output
-├── scripts/
-│   ├── deploy.sh               # Deployment automation script
-│   ├── test.sh                 # Testing script
-│   └── cleanup.sh              # Cleanup script
-├── docs/
-│   ├── architecture.md         # Detailed architecture documentation
-│   └── api-reference.md        # API usage guide
+├── lambda/
+│   ├── translate_handler.py      # Main Lambda translation logic
+│   ├── translate.zip           # Translation processing module
+├── sample JSON files/
+│   ├── Kwame_Nkrumah.json       # Example input file
+│   └── Mahatma_Gandhi.json      # Example input file
+    └── Martin_Luther_King.json  # Example input file
+    └── Nelson_Mandela.json      # Example input file
 ├── screenshots/
 │   ├── infrastructure-setup/
 │   ├── lambda-configuration/
@@ -98,9 +93,6 @@ aws-translation-infrastructure/
 ## 🚀 Infrastructure Setup
 
 ### 1. Clone the Repository
-```bash
-git clone https://github.com/yourusername/aws-translation-infrastructure.git
-cd aws-translation-infrastructure
 ```
 
 ### 2. Configure AWS Credentials
@@ -240,33 +232,31 @@ This script will:
 ## 📸 Screenshots
 
 ### Infrastructure Setup
-![Terraform Apply](./screenshots/infrastructure-setup/terraform-apply.png)
+![Terraform Validate](./screenshots/terraform-validate.png)
+*Terraform infrastructure validation process*
+
+![Terraform Apply](./screenshots/terraform-apply.png)
 *Terraform infrastructure deployment process*
-![Terraform Apply](./screenshots/Screenshot%202025-06-26%20175149.png)
 
-![AWS Resources Created](screenshots/infrastructure-setup/aws-resources.png)
-*AWS resources created by Terraform*
+### S3 Bucket after creation
+![Created S3 Buckets](screenshots/S3-%20buckets%20created.png)
+*RS3 buckets created by terraform*
 
-### S3 Bucket Configuration
-![Request Bucket](screenshots/s3-buckets/request-bucket.png)
+![Request Bucket](screenshots/empty-request-bucket.png)
 *Request bucket with event notifications configured*
 
-![Response Bucket](screenshots/s3-buckets/response-bucket.png)
-*Response bucket with lifecycle policies*
-
 ### Lambda Function
-![Lambda Configuration](screenshots/lambda-configuration/function-overview.png)
-*Lambda function configuration and triggers*
+![Lambda Configuration](screenshots/lambda%20function.png)
+*Lambda function created*
 
-![Lambda Monitoring](screenshots/lambda-configuration/monitoring.png)
-*Lambda function monitoring and metrics*
-
+![Lambda role](screenshots/lambda-role.png)
+*Lambda role created*
 ### Testing Results
-![Translation Test](screenshots/testing-results/translation-test.png)
-*Successful translation test with input and output files*
+![Upload into s3 request bucket](screenshots/manual-sample-uploads.png)
+*uploading files into s3 request bucket*
 
-![CloudWatch Logs](screenshots/testing-results/cloudwatch-logs.png)
-*CloudWatch logs showing translation processing*
+![Translation Test](screenshots/translated-files.png)
+*Successful translation test with input and output files*
 
 ## 💰 Cost Optimization
 
