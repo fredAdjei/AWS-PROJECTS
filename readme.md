@@ -17,6 +17,7 @@ This solution implements a fully serverless translation pipeline that:
 └─────────────────┘    └──────────────────┘    └─────────────────┘
 ```
 
+
 ## 📋 Table of Contents
 
 - [Features](#features)
@@ -241,6 +242,7 @@ This script will:
 ### Infrastructure Setup
 ![Terraform Apply](screenshots/infrastructure-setup/terraform-apply.png)
 *Terraform infrastructure deployment process*
+![Terraform Apply](./screenshots/Screenshot%202025-06-26%20175149.png)
 
 ![AWS Resources Created](screenshots/infrastructure-setup/aws-resources.png)
 *AWS resources created by Terraform*
