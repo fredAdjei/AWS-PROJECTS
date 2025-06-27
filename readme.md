@@ -240,7 +240,7 @@ This script will:
 ## 📸 Screenshots
 
 ### Infrastructure Setup
-![Terraform Apply](screenshots/infrastructure-setup/terraform-apply.png)
+![Terraform Apply](./screenshots/infrastructure-setup/terraform-apply.png)
 *Terraform infrastructure deployment process*
 ![Terraform Apply](./screenshots/Screenshot%202025-06-26%20175149.png)
 
